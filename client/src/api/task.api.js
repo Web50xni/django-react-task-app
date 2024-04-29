@@ -19,3 +19,7 @@ export const deleteTask = (taskId) => {
 export const updateTask = (taskId, updatedTaskData) => {
     return task.put(`/${taskId}`, updatedTaskData);
 }
+
+export const getTaskById = (taskId) => {
+    return task.get(`/${taskId}`);
+}

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getAllTask, deleteTask } from '../api/task.api';
 import { toast } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
+
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
@@ -37,6 +39,7 @@ const TaskList = () => {
             <h3>{task.title}</h3>
             <p>{task.description}</p>
             <button onClick={() => handleDeleteTask(task.id)}>Eliminar</button>
+            <Link to={`/edit/${task.id}`}>Editar</Link>
           </li>
         ))}
       </ul>
